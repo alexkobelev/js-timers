@@ -95,21 +95,34 @@ class Timer {
   }
 }
 
+let timerId = 0;
+
 document.querySelector('#app').innerHTML = `
-    <div class="container">
-      <div class="timer">
-        <div class="timer__time ">
-          <span class="timer__text timer__hours"></span>
-          <span class="timer__text timer__minutes"></span>
-          <span class="timer__text timer__seconds"></span>
-        </div>
-          <div class="timer__buttons">
-            <button class="timer__button timer__start"></button>
-            <button class="timer__button timer__pause"></button>
-            <button class="timer__button timer__stop"></button>
-          </div>
+  <div class="container">
+    <div class="add-timer">
+      <button class="add-timer__button"></button>
+    </div>
+  </div>
+`;
+
+let addTimerButton = document.querySelector('.add-timer');
+
+addTimerButton.addEventListener('click', () => {
+  let timerHtmlTemplate = `
+    <div class="timer timer-${timerId}">
+      <div class="timer__time ">
+        <span class="timer__text timer__hours"></span>
+        <span class="timer__text timer__minutes"></span>
+        <span class="timer__text timer__seconds"></span>
+      </div>
+      <div class="timer__buttons">
+        <button class="timer__button timer__start"></button>
+        <button class="timer__button timer__pause"></button>
+        <button class="timer__button timer__stop"></button>
       </div>
     </div>
   `;
-
-let timer = new Timer();
+  addTimerButton.insertAdjacentHTML('beforebegin', timerHtmlTemplate);
+  let timer = new Timer();
+  timerId += 1;
+});

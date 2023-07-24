@@ -4,15 +4,17 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0 auto;
   background-color: $mainBackgroundColor;
 }
+
 .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 50px;
   height: 100vh;
 }
 
@@ -41,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
     height: 50%;
   }
 
@@ -68,4 +70,30 @@ body {
   .timer__stop {
     background-image: url('../icons/stop.svg');
   }
+}
+
+.add-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 225px;
+  height: 120px;
+  background-color: $timerBackgroundColor;
+
+  .add-timer__button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    background-image: url('../icons/plus.svg');
+  }
+}
+
+.add-timer:hover {
+  cursor: pointer;
 }
