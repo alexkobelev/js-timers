@@ -7,7 +7,11 @@ function createPlusButtonHtml() {
   return `
   <div class="container">
     <div class="add-timer">
-      <button class="add-timer__button"></button>
+      <button class="add-timer__button">
+        <svg class="add-timer__icon">
+          <use xlink:href="src/assets/icons/sprite.svg#plus"></use>
+        </svg>
+      </button>
     </div>
   </div>
 `;
@@ -19,9 +23,21 @@ function createTimerHtml() {
       <span class="timer__time"></span>
     </div>
     <div class="timer__buttons">
-      <button class="timer__button timer__start"></button>
-      <button class="timer__button timer__pause"></button>
-      <button class="timer__button timer__stop"></button>
+      <button class="timer__button timer__start">
+        <svg class="timer__start-icon">
+          <use xlink:href="src/assets/icons/sprite.svg#start"></use>
+        </svg>
+      </button>
+      <button class="timer__button timer__pause">
+        <svg class="timer__pause-icon">
+          <use xlink:href="src/assets/icons/sprite.svg#pause"></use>
+        </svg>
+      </button>
+      <button class="timer__button timer__stop">
+        <svg class="timer__stop-icon">
+          <use xlink:href="src/assets/icons/sprite.svg#stop"></use>
+        </svg>
+      </button>
     </div>
   `;
 }

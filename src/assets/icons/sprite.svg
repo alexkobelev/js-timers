@@ -1,0 +1,19 @@
+<svg>
+  <symbol width="17" height="20" viewBox="0 0 17 20" fill="inherit" xmlns="http://www.w3.org/2000/svg" id="start">
+    <path d="M0 20V0L17 10L0 20Z"/>
+  </symbol>
+
+  <symbol width="10" height="20" viewBox="0 0 10 20" fill="inherit" xmlns="http://www.w3.org/2000/svg" id="pause">
+    <rect x="7" width="3" height="20"/>
+    <rect width="3" height="20"/>
+  </symbol>
+
+  <symbol width="20" height="20" viewBox="0 0 20 20" fill="inherit" xmlns="http://www.w3.org/2000/svg" id="stop">
+    <rect width="20" height="20"/>
+  </symbol>
+
+  <symbol width="20" height="20" viewBox="0 0 20 20" fill="inherit" xmlns="http://www.w3.org/2000/svg" id="plus">
+    <rect x="8.5" width="3" height="20" />
+    <rect y="11.5" width="3" height="20" transform="rotate(-90 0 11.5)" />
+  </symbol>
+</svg> 

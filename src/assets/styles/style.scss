@@ -1,12 +1,17 @@
 @import 'normalize.css';
 @import 'variables.scss';
 
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('../../../public/fonts/gothampro.ttf');
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Gotham Pro, Verdana, Tahoma, sans-serif;
   background-color: $mainBackgroundColor;
 }
 
@@ -23,6 +28,7 @@ body {
 @mixin button-style {
   width: 20px;
   height: 20px;
+  padding: 0;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -55,11 +61,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 22px;
     color: $primaryColor;
     height: 50%;
     width: 100%;
     border-bottom: solid 1px $primaryColor;
+  }
+
+  &__time-container.timer_running {
+    color: $secondaryColor;
+    border-color: $secondaryColor;
   }
 
   &__buttons {
@@ -74,17 +85,32 @@ body {
     @include button-style;
   }
 
-  &__start {
-    background-image: $startButtonIcon;
-  }
-
   &__pause {
     display: none;
-    background-image: $pauseButtonIcon;
   }
 
-  &__stop {
-    background-image: $stopButtonIcon;
+  &__start-icon {
+    fill: $primaryColor;
+  }
+
+  &__start-icon.timer_running {
+    fill: $secondaryColor;
+  }
+
+  &__pause-icon {
+    fill: $primaryColor;
+  }
+
+  &__pause-icon.timer_running {
+    fill: $secondaryColor;
+  }
+
+  &__stop-icon {
+    fill: $primaryColor;
+  }
+
+  &__stop-icon.timer_running {
+    fill: $secondaryColor;
   }
 }
 
@@ -92,11 +118,24 @@ body {
   @include timer-style;
 
   &__button {
-    @include button-style();
-    background-image: $plusButtonIcon;
+    @include button-style;
+  }
+
+  &:hover {
+    &__icon {
+      fill: $secondaryColor;
+    }
   }
 }
 
 .add-timer:hover {
   cursor: pointer;
+
+  .add-timer__icon {
+    fill: $secondaryColor;
+  }
+}
+
+.add-timer__icon {
+  fill: $primaryColor;
 }

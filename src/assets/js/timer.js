@@ -10,18 +10,21 @@ export class Timer {
       this.startTimer();
       this.startButton.style.display = 'none';
       this.pauseButton.style.display = 'block';
+      this.changeColor();
     });
 
     this.pauseButton.addEventListener('click', () => {
       this.pauseTimer();
       this.startButton.style.display = 'block';
       this.pauseButton.style.display = 'none';
+      this.changeColor();
     });
 
     this.stopButton.addEventListener('click', () => {
       this.stopTimer();
       this.startButton.style.display = 'block';
       this.pauseButton.style.display = 'none';
+      this.changeColor();
     });
   }
 
@@ -34,6 +37,13 @@ export class Timer {
   }
   get seconds() {
     return this.counter > 59 ? this.counter % 60 : this.counter;
+  }
+
+  changeColor() {
+    this.timeElement.parentNode.classList.toggle('timer_running');
+    this.startButton.firstElementChild.classList.toggle('timer_running');
+    this.pauseButton.firstElementChild.classList.toggle('timer_running');
+    this.stopButton.firstElementChild.classList.toggle('timer_running');
   }
 
   formatTime(hours, minutes, seconds) {
