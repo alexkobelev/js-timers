@@ -6,40 +6,63 @@
 }
 
 body {
-  margin: 0 auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: $mainBackgroundColor;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  height: 100vh;
-}
-
-.timer {
+@mixin timer-style {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 225px;
   height: 120px;
   background-color: $timerBackgroundColor;
+}
 
-  .timer__time {
+@mixin button-style {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+#app {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  column-gap: 50px;
+  row-gap: 45px;
+}
+
+.timer {
+  @include timer-style;
+
+  &__time-container {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: $mainItemsColor;
+    color: $primaryColor;
     height: 50%;
     width: 100%;
-    border-bottom: solid 1px $mainItemsColor;
+    border-bottom: solid 1px $primaryColor;
   }
 
-  .timer__buttons {
+  &__buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,50 +70,30 @@ body {
     height: 50%;
   }
 
-  .timer__button {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: none;
-    cursor: pointer;
+  &__button {
+    @include button-style;
   }
 
-  .timer__start {
-    background-image: url('../icons/play.svg');
+  &__start {
+    background-image: $startButtonIcon;
   }
 
-  .timer__pause {
+  &__pause {
     display: none;
-    background-image: url('../icons/pause.svg');
+    background-image: $pauseButtonIcon;
   }
 
-  .timer__stop {
-    background-image: url('../icons/stop.svg');
+  &__stop {
+    background-image: $stopButtonIcon;
   }
 }
 
 .add-timer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 225px;
-  height: 120px;
-  background-color: $timerBackgroundColor;
+  @include timer-style;
 
-  .add-timer__button {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: none;
-    cursor: pointer;
-    background-image: url('../icons/plus.svg');
+  &__button {
+    @include button-style();
+    background-image: $plusButtonIcon;
   }
 }
 
