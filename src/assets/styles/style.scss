@@ -26,9 +26,13 @@ body {
   background-color: $timerBackgroundColor;
 }
 
-@mixin button-style {
+@mixin button-size {
   width: 20px;
   height: 20px;
+}
+
+@mixin button-style {
+  @include button-size;
   padding: 0;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -92,6 +96,7 @@ body {
 
   &__start-icon {
     fill: $primaryColor;
+    @include button-size;
   }
 
   &__start-icon.timer_running {
@@ -100,6 +105,7 @@ body {
 
   &__pause-icon {
     fill: $primaryColor;
+    @include button-size;
   }
 
   &__pause-icon.timer_running {
@@ -108,6 +114,7 @@ body {
 
   &__stop-icon {
     fill: $primaryColor;
+    @include button-size;
   }
 
   &__stop-icon.timer_running {
@@ -139,4 +146,5 @@ body {
 
 .add-timer__icon {
   fill: $primaryColor;
+  @include button-size;
 }
