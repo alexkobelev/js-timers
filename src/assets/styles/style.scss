@@ -1,9 +1,10 @@
 @import 'normalize.css';
 @import 'variables.scss';
+@import 'queries.scss';
 
 @font-face {
   font-family: 'Gotham Pro';
-  src: url('../../../public/fonts/gothampro.ttf');
+  src: url('/fonts/gothampro.ttf');
 }
 
 * {
@@ -43,15 +44,15 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 800px;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   column-gap: 50px;
   row-gap: 45px;
+  margin: 72px 0;
 }
 
 .timer {
